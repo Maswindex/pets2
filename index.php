@@ -45,7 +45,7 @@ $f3->route('GET /pets/order', function ()
 
 
 //Define order 2 form 2
-$f3->route('POST /pets/order2', function ()
+$f3->route('GET /pets/order2', function ()
 {
     $view = new View;
     echo $view->render('views/form2.html');
