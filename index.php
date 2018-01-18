@@ -1,26 +1,32 @@
 <?php
+    require_once("vendor/autoload.php");
 
 
-session_start();
+    //create an instance of the Base class
+    $f3 = Base::instance();
 
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+    //Define a default route
+    $f3->route('GET /', function () {
+        $view = new View;
+        echo $view->render
+        ('views/home.html');
+    });
 
-require_once("vendor/autoload.php");
+    //Define a default route
+    $f3->route('GET /pets/show/@pets', function ($f3, $params) {
+        switch($params['pets']) {
+            case 'dog' :
+                echo '<h2>Dog</h2>';
+                echo "<img src='../../images/dog.jpeg'>";
+                break;
+            case 'cat' :
+                echo '<h2>Cat</h2>';
+                echo "<img src='../../images/cat.jpeg' alt='cat'>";
+                break;
+            default:
+                $f3->error(404);
+        }
+    });
 
-//create an instance of the Base class
-$f3 = Base::instance();
-
-
-//Define a default route
-$f3->route('GET /', function ()
-{
-    $view = new View;
-    echo $view->render('views/home.html');
-});
-
-///fatfree enable error reporting
-$f3->set('DEBUG', 3); // highest is 3 lowest 0;
-
-//run fat free
-$f3->run();
+    //run fat free
+    $f3->run();
