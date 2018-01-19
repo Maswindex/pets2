@@ -1,9 +1,3 @@
-<?php
-session_start();
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +7,12 @@ ini_set("display_errors", 1);
 <body>
 
 
-<form action="./form2" method="post">
+<form action="./order2" method="POST">
 
     Animal
-    <input type="text">
+    <input type="text" name="animal">
 
-    <button type="submit" >NEXT</button>
+    <button>next</button>
 
 
 </form>
