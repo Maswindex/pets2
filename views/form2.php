@@ -10,7 +10,6 @@
     <title>second form</title>
 </head>
 <body>
-
 <form action="./results" method="POST">
     <select name="color">
         <option value='purple'>Purple</option>

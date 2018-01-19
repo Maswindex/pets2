@@ -2,7 +2,7 @@
     require_once("vendor/autoload.php");
 
 
-    //create an instance of the Base class
+    //create an instance sof the Base class
     $f3 = Base::instance();
 
     //Define a default route
