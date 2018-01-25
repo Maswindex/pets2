@@ -6,9 +6,16 @@
 </head>
 <body>
 
-    <h1>My Pets</h1>
+<h1>My Pets</h1>
 
-    <a href='pets/order'>Order a pet</a>
+<a href='pets/order'>Order a pet</a>
+
+<select class="form-control" name="pet-color[]" id="pet-color">
+    <option>--Select--</option>
+    <repeat group="{{ @colors }}" value="{{ @colorOption }}">
+        <option> {{ @colorOption }}</option>
+    </repeat>
+</select>
 
 </body>
 </html>
